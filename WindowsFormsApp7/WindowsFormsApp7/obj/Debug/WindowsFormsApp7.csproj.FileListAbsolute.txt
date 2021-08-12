@@ -8,3 +8,13 @@ C:\Users\Eliy_lw44\source\repos\WindowsFormsApp7\WindowsFormsApp7\obj\Debug\Wind
 C:\Users\Eliy_lw44\source\repos\WindowsFormsApp7\WindowsFormsApp7\obj\Debug\WindowsFormsApp7.csproj.CoreCompileInputs.cache
 C:\Users\Eliy_lw44\source\repos\WindowsFormsApp7\WindowsFormsApp7\obj\Debug\WindowsFormsApp7.exe
 C:\Users\Eliy_lw44\source\repos\WindowsFormsApp7\WindowsFormsApp7\obj\Debug\WindowsFormsApp7.pdb
+C:\Users\Amiraslan\Source\Repos\Factory-Method-Shapes-\WindowsFormsApp7\WindowsFormsApp7\bin\Debug\WindowsFormsApp7.exe.config
+C:\Users\Amiraslan\Source\Repos\Factory-Method-Shapes-\WindowsFormsApp7\WindowsFormsApp7\bin\Debug\WindowsFormsApp7.exe
+C:\Users\Amiraslan\Source\Repos\Factory-Method-Shapes-\WindowsFormsApp7\WindowsFormsApp7\bin\Debug\WindowsFormsApp7.pdb
+C:\Users\Amiraslan\Source\Repos\Factory-Method-Shapes-\WindowsFormsApp7\WindowsFormsApp7\obj\Debug\WindowsFormsApp7.csproj.AssemblyReference.cache
+C:\Users\Amiraslan\Source\Repos\Factory-Method-Shapes-\WindowsFormsApp7\WindowsFormsApp7\obj\Debug\WindowsFormsApp7.cbx_Shapes.resources
+C:\Users\Amiraslan\Source\Repos\Factory-Method-Shapes-\WindowsFormsApp7\WindowsFormsApp7\obj\Debug\WindowsFormsApp7.Properties.Resources.resources
+C:\Users\Amiraslan\Source\Repos\Factory-Method-Shapes-\WindowsFormsApp7\WindowsFormsApp7\obj\Debug\WindowsFormsApp7.csproj.GenerateResource.cache
+C:\Users\Amiraslan\Source\Repos\Factory-Method-Shapes-\WindowsFormsApp7\WindowsFormsApp7\obj\Debug\WindowsFormsApp7.csproj.CoreCompileInputs.cache
+C:\Users\Amiraslan\Source\Repos\Factory-Method-Shapes-\WindowsFormsApp7\WindowsFormsApp7\obj\Debug\WindowsFormsApp7.exe
+C:\Users\Amiraslan\Source\Repos\Factory-Method-Shapes-\WindowsFormsApp7\WindowsFormsApp7\obj\Debug\WindowsFormsApp7.pdb

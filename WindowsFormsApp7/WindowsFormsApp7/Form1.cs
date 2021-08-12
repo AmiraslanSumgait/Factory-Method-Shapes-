@@ -12,6 +12,8 @@ namespace WindowsFormsApp7
 {
     public partial class cbx_Shapes : Form
     {
+        //qaqas olmaz bele
+        
         public Graphics Graphics { get; set; }
         public List<IFigure> Shapes { get; set; } = new List<IFigure>();
         public Color ShapeColor { get; set; } = Color.Black;
@@ -83,9 +85,9 @@ namespace WindowsFormsApp7
             {
                 ShapeFactory = new RectangleFactory();
             }
-            else if (true)
+            else if (comboBox1.SelectedItem.ToString() == "Circle")
             {
-                //code
+                ShapeFactory = new CircleFactory();
             }
         }
         private void cbx_Shapes_MouseClick(object sender, MouseEventArgs e)
@@ -99,9 +101,21 @@ namespace WindowsFormsApp7
                 rect.IsFill = true;
                 Shapes.Add(rect);
             }
-            else if (true)
+            else if (ShapeFactory.GetFigure() is Circle circle)
             {
-
+                circle.Color = ShapeColor;
+                circle.Size = new Size(int.Parse(txtBox_Width.Text), int.Parse(txtBox_Height.Text));
+                circle.Point = e.Location;
+                circle.IsFill = true;
+                Shapes.Add(circle);
+            }
+            else if (ShapeFactory.GetFigure() is Triangle triangle)
+            {
+                triangle.Color = ShapeColor;
+                triangle.Size = new Size(int.Parse(txtBox_Width.Text), int.Parse(txtBox_Height.Text));
+                triangle.Point = e.Location;
+                triangle.IsFill = true;
+                Shapes.Add(triangle);
             }
             this.Refresh();
         }
@@ -126,12 +140,29 @@ namespace WindowsFormsApp7
                     }
                     else if(shape is Circle circle)
                     {
-                        //code
+                        if (circle.IsFill)
+                        {
+                            g.FillEllipse(brush, circle.Point.X, circle.Point.Y, circle.Size.Width, circle.Size.Height);
+                        }
+                        else
+                        {
+                            g.DrawEllipse(pen, circle.Point.X, circle.Point.Y, circle.Size.Width, circle.Size.Height);
+                        }
+                    }
+                    else if(shape is Triangle triangle)
+                    {
+                        if (triangle.IsFill)
+                        {
+                          
+                        }
+                        else
+                        {
+                          //  g.DrawPolygon(pen, triangle.Point.X, triangle.Point.Y, triangle.Size.Width, triangle.Size.Height);
+                        }
                     }
                 }
             }
         }
-
         private void btn_ColorDialog_Click(object sender, EventArgs e)
         {
             if (colorDialog1.ShowDialog()== DialogResult.OK)
