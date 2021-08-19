@@ -12,7 +12,7 @@ namespace WindowsFormsApp7
 {
     public partial class cbx_Shapes : Form
     {
-        //update in this week 
+        //update in this week insallah
         
         public Graphics Graphics { get; set; }
         public List<IFigure> Shapes { get; set; } = new List<IFigure>();
@@ -157,7 +157,7 @@ namespace WindowsFormsApp7
                         }
                         else
                         {
-                          //  g.DrawPolygon(pen, triangle.Point.X, triangle.Point.Y, triangle.Size.Width, triangle.Size.Height);
+                          ///  g.DrawPolygon(pen, triangle.Point.X, triangle.Point.Y, triangle.Size.Width, triangle.Size.Height);
                         }
                     }
                 }
