@@ -12,7 +12,7 @@ namespace WindowsFormsApp7
 {
     public partial class cbx_Shapes : Form
     {
-        //update in this week insallah qaqas
+        //update in this week insallah qaqasss
         
         public Graphics Graphics { get; set; }
         public List<IFigure> Shapes { get; set; } = new List<IFigure>();
