@@ -35,8 +35,8 @@
             this.txtBox_Height = new System.Windows.Forms.TextBox();
             this.btn_ColorDialog = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.rb_Fill = new System.Windows.Forms.RadioButton();
+            this.rb_Outline = new System.Windows.Forms.RadioButton();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.SuspendLayout();
             // 
@@ -104,35 +104,35 @@
             this.label2.TabIndex = 7;
             this.label2.Text = "Color";
             // 
-            // radioButton1
+            // rb_Fill
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(887, 13);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(53, 24);
-            this.radioButton1.TabIndex = 8;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Fill";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.rb_Fill.AutoSize = true;
+            this.rb_Fill.Location = new System.Drawing.Point(887, 13);
+            this.rb_Fill.Name = "rb_Fill";
+            this.rb_Fill.Size = new System.Drawing.Size(53, 24);
+            this.rb_Fill.TabIndex = 8;
+            this.rb_Fill.TabStop = true;
+            this.rb_Fill.Text = "Fill";
+            this.rb_Fill.UseVisualStyleBackColor = true;
             // 
-            // radioButton2
+            // rb_Outline
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(887, 34);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(87, 24);
-            this.radioButton2.TabIndex = 9;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Outline";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.rb_Outline.AutoSize = true;
+            this.rb_Outline.Location = new System.Drawing.Point(887, 34);
+            this.rb_Outline.Name = "rb_Outline";
+            this.rb_Outline.Size = new System.Drawing.Size(87, 24);
+            this.rb_Outline.TabIndex = 9;
+            this.rb_Outline.TabStop = true;
+            this.rb_Outline.Text = "Outline";
+            this.rb_Outline.UseVisualStyleBackColor = true;
             // 
             // cbx_Shapes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1685, 866);
-            this.Controls.Add(this.radioButton2);
-            this.Controls.Add(this.radioButton1);
+            this.Controls.Add(this.rb_Outline);
+            this.Controls.Add(this.rb_Fill);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btn_ColorDialog);
             this.Controls.Add(this.lbl_Height);
@@ -160,8 +160,8 @@
         private System.Windows.Forms.TextBox txtBox_Height;
         private System.Windows.Forms.Button btn_ColorDialog;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton rb_Fill;
+        private System.Windows.Forms.RadioButton rb_Outline;
         private System.Windows.Forms.ColorDialog colorDialog1;
     }
 }

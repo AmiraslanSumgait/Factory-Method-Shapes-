@@ -46,6 +46,21 @@ namespace WindowsFormsApp7
             public Color Color { get; set; }
             public bool IsFill { get; set; }
         }
+        List<Point> GetPointsForTriAngle(Point point, int width, int height)
+        {
+            List<Point> points = new List<Point>();
+            int x1 = point.X; int y1 = point.Y;
+            int x2 = x1 - width / 2; int y2 = y1 + height;
+            int x3 = x1 + width / 2; int y3 = y2;
+            
+                Point point1 = new Point(x1, y1);
+                Point point2 = new Point(x2, y2);
+                Point point3 = new Point(x3, y3);
+                points.Add(point1);
+                points.Add(point2);
+                points.Add(point3);
+            return points;
+        }
         public interface IFactory
         {
             IFigure GetFigure();
@@ -71,6 +86,7 @@ namespace WindowsFormsApp7
                 "Rectangle",
                  "Triangle"
             };
+            rb_Fill.Checked = true;
             comboBox1.Items.AddRange(shapes);
             comboBox1.SelectedIndex = 0;
         }
@@ -89,6 +105,10 @@ namespace WindowsFormsApp7
             {
                 ShapeFactory = new CircleFactory();
             }
+            else if(comboBox1.SelectedItem.ToString() == "Triangle")
+            {
+                ShapeFactory = new TriangleFactory();
+            }
         }
         private void cbx_Shapes_MouseClick(object sender, MouseEventArgs e)
         {
@@ -98,7 +118,15 @@ namespace WindowsFormsApp7
                 rect.Color = ShapeColor;
                 rect.Size = new Size(int.Parse(txtBox_Width.Text), int.Parse(txtBox_Height.Text));
                 rect.Point = e.Location;
-                rect.IsFill = true;
+
+                if (rb_Fill.Checked)
+                {
+                    rect.IsFill = true;
+                }
+                else
+                {
+                    rect.IsFill = false;
+                }
                 Shapes.Add(rect);
             }
             else if (ShapeFactory.GetFigure() is Circle circle)
@@ -106,7 +134,14 @@ namespace WindowsFormsApp7
                 circle.Color = ShapeColor;
                 circle.Size = new Size(int.Parse(txtBox_Width.Text), int.Parse(txtBox_Height.Text));
                 circle.Point = e.Location;
-                circle.IsFill = true;
+                if (rb_Fill.Checked)
+                {
+                    circle.IsFill = true;
+                }
+                else
+                {
+                    circle.IsFill = false;
+                }
                 Shapes.Add(circle);
             }
             else if (ShapeFactory.GetFigure() is Triangle triangle)
@@ -114,20 +149,28 @@ namespace WindowsFormsApp7
                 triangle.Color = ShapeColor;
                 triangle.Size = new Size(int.Parse(txtBox_Width.Text), int.Parse(txtBox_Height.Text));
                 triangle.Point = e.Location;
-                triangle.IsFill = true;
+                if (rb_Fill.Checked)
+                {
+                    triangle.IsFill = true;
+                }
+                else
+                {
+                    triangle.IsFill = false;
+                }
                 Shapes.Add(triangle);
             }
             this.Refresh();
         }
         private void cbx_Shapes_Paint(object sender, PaintEventArgs e)
         {
-            Pen pen = new Pen(ShapeColor, 5);
-            SolidBrush brush = new SolidBrush(ShapeColor);
+           
             using(var g = e.Graphics)
             {
                 foreach (var shape in Shapes)
-                { 
-                    if(shape is Rectangle rect)
+                {
+                    Pen pen = new Pen(shape.Color, 5);
+                    SolidBrush brush = new SolidBrush(shape.Color);
+                    if (shape is Rectangle rect)
                     {
                         if (rect.IsFill)
                         {
@@ -151,16 +194,19 @@ namespace WindowsFormsApp7
                     }
                     else if(shape is Triangle triangle)
                     {
+                        List<Point> points1 = new List<Point>();
+                        points1 = GetPointsForTriAngle(triangle.Point, triangle.Size.Width, triangle.Size.Height);
                         if (triangle.IsFill)
                         {
-                          
+                            g.FillPolygon(brush, points1.ToArray());
                         }
                         else
                         {
-                          ///  g.DrawPolygon(pen, triangle.Point.X, triangle.Point.Y, triangle.Size.Width, triangle.Size.Height);
+                            g.DrawPolygon(pen, points1.ToArray());
                         }
                     }
                 }
+              
             }
         }
         private void btn_ColorDialog_Click(object sender, EventArgs e)
@@ -170,5 +216,6 @@ namespace WindowsFormsApp7
                 ShapeColor = colorDialog1.Color;
             }
         }
+
     }
 }
